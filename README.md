@@ -18,8 +18,8 @@
   - Chrome extension to add a task
   - Suggest next task
 
-## Technologies  
-<p align="center"> 
+## Technologies used in EasyTask
+<p align="left"> 
 
 <a href="https://www.typescriptlang.org/">
 <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"></img>
