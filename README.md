@@ -1,5 +1,4 @@
-# EasyTasks
-  Easys tasks is a simplified to do application aimed to not overwhelm the user.
+![banner](https://user-images.githubusercontent.com/70561117/116444001-2393e880-a809-11eb-84d8-e5dca5b51548.png)
 
 ## Goals To Keep In Mind
   - Fully developed with TDD utilizing the Jest testing library
