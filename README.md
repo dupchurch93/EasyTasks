@@ -1,5 +1,11 @@
 ![banner](https://user-images.githubusercontent.com/70561117/116444001-2393e880-a809-11eb-84d8-e5dca5b51548.png)
 
+---
+
+**EasyTask** is a task application designed for people with ADHD that keeps simplicity in mind!
+It has been fully developed with TDD utilizing the Jest testing library for React and Pytest for testing
+the Flask backend. In addition, responsiveness/mobile was a put first with Tailwind & Tailwind UI.
+
 ## Goals To Keep In Mind
   - Fully developed with TDD utilizing the Jest testing library
   - Design with responsiveness/mobile in mind using Tailwind & Tailwind UI
