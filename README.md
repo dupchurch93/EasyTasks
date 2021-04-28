@@ -18,20 +18,7 @@
   - Chrome extension to add a task
   - Suggest next task
 
-## Technologies
-  - TypeScript
-  - Python
-  - React
-  - Redux
-  - TailwindCSS
-  - TailwindUI
-  - Flask
-  - PostgreSQL
-  - SQLAlchemy
-  - Pytest
-  - Jest
-  - Amazon Web Services
-  
+## Technologies  
 <p align="center"> 
 
 <a href="https://www.typescriptlang.org/">
