@@ -15,12 +15,9 @@
   - List Display of Tasks (Order by date due or importance)
   - Filter Tasks
 
-
-
 ## Bonus Features
   - Chrome extension to add a task
   - Suggest next task
-
 
 ## Technologies
   - TypeScript
@@ -35,4 +32,3 @@
   - Pytest
   - Jest
   - Amazon Web Services
-  - 
