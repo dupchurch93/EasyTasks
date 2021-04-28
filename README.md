@@ -31,30 +31,51 @@
   - Pytest
   - Jest
   - Amazon Web Services
-  - 
+  
+<p align="center"> 
+
+<a href="https://www.typescriptlang.org/">
 <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"></img>
+<a />
 
+<a href="https://www.python.org/">
 <img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white"></img>
+<a />
 
+<a href="https://reactjs.org/">
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"></img>
+<a />
 
+<a href="https://tailwindcss.com/">
 <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"></img>
+<a />
 
+<a href="https://reactrouter.com/">
 <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"></img>
+<a />
 
+<a href="https://flask.palletsprojects.com/en/1.1.x/">
 <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"></img>
+<a />
 
+<a href="https://www.postgresql.org/">
 <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"></img>
+<a />
 
+<a href="https://aws.amazon.com/">
 <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white"></img>
+<a />
 
+<a href="https://redux.js.org/">
 <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white"></img>
+<a />
 
-<img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white"></img>
-
-
+<a href="https://jestjs.io/">
 <img src="https://img.shields.io/badge/-Jest-C21325?logo=jest&logoColor=white&style=for-the-badge"></img>
+<a />
 
-
+<a href="https://docs.pytest.org/en/6.2.x/">
 <img src="https://img.shields.io/badge/-Pytest-0098FF?logo=&logoColor=white&style=for-the-badge"></img>
+<a />
+<p />  
 
