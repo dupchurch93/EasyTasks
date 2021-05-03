@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+alembic = "*"
+boto3 = "*"
+botocore = "*"
+flask-cors = "*"
+flask-jwt-extended = "*"
+flask-login = "*"
+email-validator = "*"
+flask-migrate = "*"
+flask-sqlalchemy = "*"
+flask-wtf = "*"
+flask = "*"
+gunicorn = "*"
+sqlalchemy = "*"
+python-dotenv = "*"
+werkzeug = "*"
+wtforms = "*"
+pyjwt = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
