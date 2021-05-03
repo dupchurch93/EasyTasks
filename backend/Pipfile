@@ -21,6 +21,7 @@ python-dotenv = "*"
 werkzeug = "*"
 wtforms = "*"
 pyjwt = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
