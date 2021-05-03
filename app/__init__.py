@@ -6,8 +6,11 @@ from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 from flask_login import LoginManager
 
+
+from .models import db, User
 # ToDo will add in later
 # from .seeds import seed_commands
+from .seeds import seed_commands
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -16,13 +19,20 @@ app = Flask(__name__)
 login = LoginManager(app)
 login.login_view = 'auth.unauthorized'
 
+# Tell flask about our seed commands
+app.cli.add_command(seed_commands)
+
 # Loads the user when returning current user
-# @login.user_loader
-# def load_user(id):
-#     return User.query.get(int(id))
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
 
 # Import configuration variables
 app.config.from_object(Config)
+
+# Intialize database for our application
+db.init_app(app)
+Migrate(app, db)
 
 # Application Security
 CORS(app)
