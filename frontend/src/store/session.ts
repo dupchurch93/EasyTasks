@@ -57,23 +57,18 @@ export const logout = () => async (dispatch) => {
   return await response.json();
 };
 
-export const signUp = (username, email, password) => async (dispatch) => {
-  const response = await fetch("/api/auth/signup", {
+export const createUser = (user) => async (dispatch) => {
+  const res = await fetch(`/api/auth/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      username,
-      email,
-      password,
-    }),
+    body: JSON.stringify(user),
   });
-  const user = await response.json();
-  if (!user.errors) {
-    dispatch(setSession(user));
-  }
-  return user;
+
+  const newUser = await res.json();
+
+  dispatch(setSession(newUser));
 };
 
 const initialState = {
