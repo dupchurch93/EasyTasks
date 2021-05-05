@@ -1,47 +1,45 @@
-import React, { useState, FC } from "react";
+import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { login } from "../../../store/session";
 
-const LoginForm  = () => {
-  const dispatch = useDispatch();
-  const sessionUser = useSelector((state: any) => state.session.user);
+const LoginForm = () => {
+  // const dispatch = useDispatch();
+  // const sessionUser = useSelector((state: any) => state.session.user);
 
-  const [errors, setErrors] = useState([]);
+  // const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onLogin = async (e: any) => {
+  const onLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    const user = await dispatch(login(email, password));
-    // if (user.errors) {
-    //   setErrors(user.errors);
-    // }
+    // dispatch(login(email, password));
   };
 
-  const updateEmail = (e: any) => {
+  const updateEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
-  const updatePassword = (e: any) => {
+  const updatePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
 
-  if (sessionUser) {
-    return <Redirect to="/" />;
-  }
+  // if (sessionUser) {
+  //   return <Redirect to="/" />;
+  // }
 
   return (
-    <form onSubmit={onLogin}>
+    <form data-testid="login-form" onSubmit={onLogin}>
       <div>
-        {errors.map((error) => (
+        {/* {errors.map((error) => (
           <div>{error}</div>
-        ))}
+        ))} */}
       </div>
       <div>
         <label htmlFor="email">Email</label>
         <input
+          data-testid="email-input"
           name="email"
           type="text"
           placeholder="Email"
