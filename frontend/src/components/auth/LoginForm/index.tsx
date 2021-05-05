@@ -50,13 +50,17 @@ const LoginForm = () => {
       <div>
         <label htmlFor="password">Password</label>
         <input
+          data-testid="password-input"
           name="password"
           type="password"
           placeholder="Password"
           value={password}
           onChange={updatePassword}
         />
-        <button type="submit">Login</button>
+        <button
+        data-testid="submit-button"
+        type="submit"
+        >Login</button>
       </div>
     </form>
   );
