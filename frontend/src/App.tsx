@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { authenticate } from "./store/session";
+import LoginForm from "./components/auth/LoginForm";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -18,7 +19,7 @@ function App() {
       {/* Navbar will be here */}
       <Switch>
         <Route path="/" exact={true}>
-          {/* <Home /> */}
+          <LoginForm></LoginForm>
         </Route>
       </Switch>
     </BrowserRouter>

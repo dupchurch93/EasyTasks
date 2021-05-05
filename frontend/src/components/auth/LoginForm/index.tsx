@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { login } from "../../../store/session";
 
-const LoginForm = () => {
+const LoginForm  = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state: any) => state.session.user);
 
