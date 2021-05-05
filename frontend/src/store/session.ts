@@ -1,7 +1,7 @@
 const SET_SESSION = "session/SET_SESSION";
 export const REMOVE_SESSION = "session/REMOVE_SESSION";
 
-const setSession = (user) => {
+const setSession = (user: any) => {
   return {
     type: SET_SESSION,
     user,
@@ -14,7 +14,7 @@ const removeSession = () => {
   };
 };
 
-export const authenticate = () => async (dispatch) => {
+export const authenticate = () => async (dispatch: any) => {
   const response = await fetch("/api/auth/", {
     headers: {
       "Content-Type": "application/json",
@@ -27,13 +27,15 @@ export const authenticate = () => async (dispatch) => {
   return user;
 };
 
-export const login = (email, password) => async (dispatch) => {
+export const login = (email: string, password: string) => async (
+  dispatch: any
+) => {
   const response = await fetch("/api/auth/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stingify({
+    body: JSON.stringify({
       email,
       password,
     }),
@@ -45,7 +47,7 @@ export const login = (email, password) => async (dispatch) => {
   return user;
 };
 
-export const logout = () => async (dispatch) => {
+export const logout = () => async (dispatch: any) => {
   const response = await fetch("/api/auth/logout", {
     headers: {
       "Content-Type": "application/json",
@@ -57,7 +59,7 @@ export const logout = () => async (dispatch) => {
   return await response.json();
 };
 
-export const createUser = (user) => async (dispatch) => {
+export const createUser = (user: object) => async (dispatch: any) => {
   const res = await fetch(`/api/auth/signup`, {
     method: "POST",
     headers: {
@@ -75,7 +77,7 @@ const initialState = {
   user: null,
 };
 
-const sessionReducer = (state = initialState, action) => {
+const sessionReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case SET_SESSION:
       return { ...state, user: action.user };

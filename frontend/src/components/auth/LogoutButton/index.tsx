@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 const LogoutButton = () => {
   const history = useHistory();
-  const sessionUser = useSelector((state) => state.session.user);
+  // const sessionUser = useSelector((state: any) => state.session.user);
   const dispatch = useDispatch();
 
-  const onLogout = async (e) => {
+  const onLogout = async (e: any) => {
     await dispatch(logout());
     history.push("/");
   };

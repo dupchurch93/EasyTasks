@@ -13,18 +13,18 @@ const SignUpForm = () => {
   const [repeatPassword, setRepeatPassword] = useState("");
 
   // Grab the user from the redux store
-  const sessionUser = useSelector((state) => state.session.user);
+  const sessionUser = useSelector((state: any) => state.session.user);
 
-  const onSignUp = async (e) => {
+  const onSignUp = async (e: any) => {
     e.preventDefault();
     // let newErrors = [];
     if (password === repeatPassword) {
-      dispatch(createUser({ username, email, password })).then(() => {
-        setUsername("");
-        setEmail("");
-        setPassword("");
-        setRepeatPassword("");
-      });
+      await dispatch(createUser({ username, email, password }));
+      await setUsername("");
+      await setEmail("");
+      await setPassword("");
+      await setRepeatPassword("");
+
       // .catch(async (res) => {
       //   const data = await res.json();
       //   if (data && data.errors) {
@@ -34,23 +34,25 @@ const SignUpForm = () => {
     }
   };
 
-  const loginAsDemo = async (e) => {
-    await dispatch(login({ email: "demo@aa.io", password: "password" }));
+  const loginAsDemo = async (e: any) => {
+    setEmail("demo@aa.io");
+    setPassword("password");
+    await dispatch(login(email, password));
   };
 
-  const updateUsername = (e) => {
+  const updateUsername = (e: any) => {
     setUsername(e.target.value);
   };
 
-  const updateEmail = (e) => {
+  const updateEmail = (e: any) => {
     setEmail(e.target.value);
   };
 
-  const updatePassword = (e) => {
+  const updatePassword = (e: any) => {
     setPassword(e.target.value);
   };
 
-  const updateRepeatPassword = (e) => {
+  const updateRepeatPassword = (e: any) => {
     setRepeatPassword(e.target.value);
   };
 

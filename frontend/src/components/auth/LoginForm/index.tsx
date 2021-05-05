@@ -6,25 +6,25 @@ import { login } from "../../../store/session";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
+  const sessionUser = useSelector((state: any) => state.session.user);
 
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onLogin = async (e) => {
+  const onLogin = async (e: any) => {
     e.preventDefault();
     const user = await dispatch(login(email, password));
-    if (!user.errors) {
-      setErrors(user.errors);
-    }
+    // if (user.errors) {
+    //   setErrors(user.errors);
+    // }
   };
 
-  const updateEmail = (e) => {
+  const updateEmail = (e: any) => {
     setEmail(e.target.value);
   };
 
-  const updatePassword = (e) => {
+  const updatePassword = (e: any) => {
     setPassword(e.target.value);
   };
 
