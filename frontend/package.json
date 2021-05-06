@@ -11,6 +11,7 @@
     "@types/node": "^12.20.11",
     "@types/react": "^17.0.4",
     "@types/react-dom": "^17.0.3",
+    "http-proxy-middleware": "^0.19.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
@@ -49,6 +50,7 @@
       "last 1 safari version"
     ]
   },
+  "proxy": "http://localhost:5000",
   "devDependencies": {
     "@types/react-router-dom": "^5.1.7",
     "fetch-mock": "^9.11.0",
