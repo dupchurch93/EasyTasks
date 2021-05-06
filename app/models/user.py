@@ -10,6 +10,7 @@ class User(db.Model, UserMixin):
   email = db.Column(db.String(255), nullable = False, unique = True)
   hashed_password = db.Column(db.String(255), nullable = False)
   profile_pic = db.Column(db.String(1000), nullable = True)
+  tasks = db.relationship("Task", back_populates="user")
 
 
   @property
