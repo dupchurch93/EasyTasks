@@ -1,5 +1,5 @@
 from flask import Blueprint
-from flask_login import current_user
+from flask_login import current_user, login_user, logout_user, login_required
 
 auth = Blueprint('auth', __name__)
 
