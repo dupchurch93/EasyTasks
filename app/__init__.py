@@ -23,6 +23,7 @@ login.login_view = 'auth.unauthorized'
 # Tell flask about our seed commands
 app.cli.add_command(seed_commands)
 
+#  Proxy in the front end of the project redirects all non text/hmtl type requests to the proxy location. In our case localhost:5000 for our flask server
 app.register_blueprint(auth, url_prefix='/api/auth/')
 
 # Loads the user when returning current user
