@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from flask_login import current_user, login_user, logout_user, login_required
 from app.forms.auth import LoginForm, RegistrationForm
-from app.models import User
+from app.models import User, db
 
 auth = Blueprint('auth', __name__)
 

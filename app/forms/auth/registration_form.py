@@ -14,11 +14,10 @@ def user_exists(form, field):
 # check if the password contains at least one uppercase, one lower case, and one special character with length > 6
 def password_format(form, field):
     password = field.data
-    print(password)
-    pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$"
-    result = re.findall(pattern, password)
-    print(result)
-    if not result:
+    pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{6,20}$"
+    pat = re.compile(pattern)
+    match = re.search(pat, password)
+    if not match:
         raise ValidationError("Password must contain at least 1 number, one lower case letter, one upper case letter, and one special character.")
 
 class RegistrationForm(FlaskForm):
