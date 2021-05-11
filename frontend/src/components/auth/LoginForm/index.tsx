@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../../store/session";
 
 const LoginForm = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // const sessionUser = useSelector((state: any) => state.session.user);
 
   // const [errors, setErrors] = useState([]);
@@ -14,7 +14,7 @@ const LoginForm = () => {
 
   const onLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // dispatch(login(email, password));
+    dispatch(login(email, password));
   };
 
   const updateEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,10 +57,9 @@ const LoginForm = () => {
           value={password}
           onChange={updatePassword}
         />
-        <button
-        data-testid="submit-button"
-        type="submit"
-        >Login</button>
+        <button data-testid="submit-button" type="submit">
+          Login
+        </button>
       </div>
     </form>
   );

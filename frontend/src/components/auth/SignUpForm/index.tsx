@@ -100,7 +100,9 @@ const SignUpForm = () => {
         ></input>
       </div>
       <div>
-        <button type="submit">Sign Up</button>
+        <button type="submit" onClick={onSignUp}>
+          Sign Up
+        </button>
       </div>
       <div>
         <button onClick={loginAsDemo}>Try as Demo User</button>

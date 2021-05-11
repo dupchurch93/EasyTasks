@@ -1,91 +1,80 @@
-const SET_SESSION = "session/SET_SESSION";
-export const REMOVE_SESSION = "session/REMOVE_SESSION";
+import { Dispatch } from "redux";
+import {
+  User,
+  SET_SESSION,
+  REMOVE_SESSION,
+  SessionDispatchTypes,
+} from "./sessionActionTypes";
 
-const setSession = (user: any) => {
-  return {
-    type: SET_SESSION,
-    user,
+export const authenticate =
+  () => async (dispatch: Dispatch<SessionDispatchTypes>) => {
+    const response = await fetch("/api/auth/", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const user = await response.json();
+    if (!user.errors) {
+      dispatch({
+        type: SET_SESSION,
+        payload: user,
+      });
+    }
+    return user;
   };
-};
 
-const removeSession = () => {
-  return {
-    type: REMOVE_SESSION,
+export const login =
+  (email: string, password: string) =>
+  async (dispatch: Dispatch<SessionDispatchTypes>) => {
+    const response = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+    const user = await response.json();
+    if (!user.errors) {
+      dispatch({
+        type: SET_SESSION,
+        payload: user,
+      });
+    }
+    return user;
   };
-};
 
-export const authenticate = () => async (dispatch: any) => {
-  const response = await fetch("/api/auth/", {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  const user = await response.json();
-  if (!user.errors) {
-    dispatch(setSession(user));
-  }
-  return user;
-};
+export const logout =
+  () => async (dispatch: Dispatch<SessionDispatchTypes>) => {
+    const response = await fetch("/api/auth/logout", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (response.ok) {
+      dispatch({
+        type: REMOVE_SESSION,
+      });
+    }
+    return await response.json();
+  };
 
-export const login = (email: string, password: string) => async (
-  dispatch: any
-) => {
-  const response = await fetch("/api/auth/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      email,
-      password,
-    }),
-  });
-  const user = await response.json();
-  if (!user.errors) {
-    dispatch(setSession(user));
-  }
-  return user;
-};
+export const createUser =
+  (user: User) => async (dispatch: Dispatch<SessionDispatchTypes>) => {
+    const res = await fetch(`/api/auth/signup`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
 
-export const logout = () => async (dispatch: any) => {
-  const response = await fetch("/api/auth/logout", {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  if (response.ok) {
-    dispatch(removeSession());
-  }
-  return await response.json();
-};
+    const newUser = await res.json();
 
-export const createUser = (user: object) => async (dispatch: any) => {
-  const res = await fetch(`/api/auth/signup`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(user),
-  });
-
-  const newUser = await res.json();
-
-  dispatch(setSession(newUser));
-};
-
-const initialState = {
-  user: null,
-};
-
-const sessionReducer = (state = initialState, action: any) => {
-  switch (action.type) {
-    case SET_SESSION:
-      return { ...state, user: action.user };
-    case REMOVE_SESSION:
-      return { ...state, user: null };
-    default:
-      return state;
-  }
-};
-
-export default sessionReducer;
+    dispatch({
+      type: SET_SESSION,
+      payload: newUser,
+    });
+  };

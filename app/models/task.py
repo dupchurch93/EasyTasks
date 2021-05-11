@@ -11,7 +11,7 @@ class Task(db.Model):
   priority = db.Column(db.String(255), nullable = False)
   due_date = db.Column(db.Date, nullable = True)
   user = db.relationship("User", back_populates="tasks")
-  project = db.relationship("Project", back_populates="projects")
+  project = db.relationship("Project", back_populates="tasks")
 
   def to_dict(self):
     return {
