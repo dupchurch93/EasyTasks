@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { authenticate } from "./store/session";
-import LoginForm from "./components/auth/LoginForm";
-import SignUpForm from "./components/auth/SignUpForm";
-import logo from "./logo.svg";
+import { authenticate } from "../../store/session";
+import LoginForm from "../Auth/LoginForm";
+import SignUpForm from "../Auth/SignUpForm";
 import "./App.css";
+import Splash from "../Sections/Splash";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,10 +20,13 @@ function App() {
       {/* Navbar will be here */}
       <Switch>
         <Route path="/" exact={true}>
-          <LoginForm></LoginForm>
+          <Splash />
+        </Route>
+        <Route path="/login" exact={true}>
+          <LoginForm />
         </Route>
         <Route path="/sign-up" exact={true}>
-          <SignUpForm></SignUpForm>
+          <SignUpForm />
         </Route>
       </Switch>
     </BrowserRouter>
