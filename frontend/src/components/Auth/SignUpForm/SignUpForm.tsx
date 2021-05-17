@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, MouseEvent } from "react";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createUser, login } from "../../../store/session";
@@ -35,7 +35,7 @@ const SignUpForm = () => {
     }
   };
 
-  const loginAsDemo = async (e: React.FormEvent) => {
+  const loginAsDemo = async (e: MouseEvent<HTMLButtonElement>) => {
     setEmail("demo@aa.io");
     setPassword("password");
     await dispatch(login(email, password));

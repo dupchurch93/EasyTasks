@@ -3,11 +3,10 @@ import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { login } from "../../../store/session";
-import { RootState } from "../../../store/index"
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state: RootState) => state.session.user);
+  // const sessionUser = useSelector((state: any) => state.session.user);
 
   // const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
