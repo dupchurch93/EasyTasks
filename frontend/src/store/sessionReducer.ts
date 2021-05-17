@@ -6,22 +6,30 @@ import {
 } from "./sessionActionTypes";
 
 const initialState = {
-  user: null,
+  user: {
+    username: "",
+    email: "",
+  },
 };
 
-interface InitialState {
-  user: null;
+interface SessionState {
+  user: User;
 }
 
+
+
 const sessionReducer = (
-  state: InitialState | User = initialState,
+  state: SessionState = initialState,
   action: SessionDispatchTypes
-) => {
+): SessionState => {
   switch (action.type) {
     case SET_SESSION:
       return { ...state, user: action.payload };
     case REMOVE_SESSION:
-      return { ...state, user: null };
+      return { ...state, user: {
+        username: "",
+        email: "",
+      }};
     default:
       return state;
   }

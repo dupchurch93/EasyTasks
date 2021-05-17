@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createUser, login } from "../../../store/session";
+import { RootState } from "../../../store";
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const SignUpForm = () => {
   const [repeatPassword, setRepeatPassword] = useState("");
 
   // Grab the user from the redux store
-  const sessionUser = useSelector((state: any) => state.session.user);
+  const sessionUser = useSelector((state: RootState) => state.session.user);
 
   const onSignUp = async (e: any) => {
     e.preventDefault();
