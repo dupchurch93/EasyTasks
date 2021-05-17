@@ -1,14 +1,16 @@
-import React from "react";
+import { MouseEvent } from "react"
 import { useHistory } from "react-router-dom";
 import { logout } from "../../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 
+import { RootState } from "../../../store/index"
+
 const LogoutButton = () => {
   const history = useHistory();
-  // const sessionUser = useSelector((state: any) => state.session.user);
+  const sessionUser = useSelector((state: RootState) => state.session.user);
   const dispatch = useDispatch();
 
-  const onLogout = async (e: any) => {
+  const onLogout = async (e: MouseEvent<HTMLButtonElement>) => {
     await dispatch(logout());
     history.push("/");
   };

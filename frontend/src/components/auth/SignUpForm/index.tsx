@@ -16,7 +16,7 @@ const SignUpForm = () => {
   // Grab the user from the redux store
   const sessionUser = useSelector((state: RootState) => state.session.user);
 
-  const onSignUp = async (e: any) => {
+  const onSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     // let newErrors = [];
     if (password === repeatPassword) {
@@ -35,25 +35,25 @@ const SignUpForm = () => {
     }
   };
 
-  const loginAsDemo = async (e: any) => {
+  const loginAsDemo = async (e: React.FormEvent) => {
     setEmail("demo@aa.io");
     setPassword("password");
     await dispatch(login(email, password));
   };
 
-  const updateUsername = (e: any) => {
+  const updateUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
   };
 
-  const updateEmail = (e: any) => {
+  const updateEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
-  const updatePassword = (e: any) => {
+  const updatePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
 
-  const updateRepeatPassword = (e: any) => {
+  const updateRepeatPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setRepeatPassword(e.target.value);
   };
 
