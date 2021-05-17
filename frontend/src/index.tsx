@@ -9,9 +9,7 @@ import configureStore from "./store";
 
 const store = configureStore({});
 
-if (process.env.NODE_ENV !== "production") {
-  window.store = store;
-}
+window.store = store;
 
 // Initialize a root with routing and the redux store providers
 const Root = () => (
