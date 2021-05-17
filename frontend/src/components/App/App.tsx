@@ -5,6 +5,7 @@ import { authenticate } from "../../store/session";
 import LoginForm from "../Auth/LoginForm";
 import SignUpForm from "../Auth/SignUpForm";
 import "./App.css";
+import Splash from "../Sections/Splash";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,10 +20,13 @@ function App() {
       {/* Navbar will be here */}
       <Switch>
         <Route path="/" exact={true}>
-          <LoginForm></LoginForm>
+          <Splash />
+        </Route>
+        <Route path="/login" exact={true}>
+          <LoginForm />
         </Route>
         <Route path="/sign-up" exact={true}>
-          <SignUpForm></SignUpForm>
+          <SignUpForm />
         </Route>
       </Switch>
     </BrowserRouter>
