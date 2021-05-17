@@ -9,8 +9,6 @@ import configureStore from "./store";
 
 const store = configureStore({});
 
-window.store = store;
-
 // Initialize a root with routing and the redux store providers
 const Root = () => (
   <BrowserRouter>
