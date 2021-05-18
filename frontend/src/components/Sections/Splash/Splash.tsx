@@ -1,10 +1,9 @@
 function Splash() {
   return (
-    <div>
+    <div className="grid grid-rows-splash grid-cols-splash">
       <h1>Wow</h1>
-      <p className="bg-red-500 w-44 border border-blue-500 rounded-2xl flex m-4 p-4 justify-center">Wow</p>
-      <input type="text" />
-      <button>Wow</button>
+
+      <div className="h-screen bg-blue-600"></div>
     </div>
   );
 }
