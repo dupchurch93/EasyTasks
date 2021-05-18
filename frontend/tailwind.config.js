@@ -13,6 +13,9 @@ module.exports = {
       gridTemplateColumns: {
         splash: "70% auto",
       },
+      margin: {
+        twenty: "15%",
+      },
     },
   },
   variants: {
