@@ -6,6 +6,7 @@ import LoginForm from "../Auth/LoginForm";
 import SignUpForm from "../Auth/SignUpForm";
 import "./App.css";
 import Splash from "../Sections/Splash";
+import ProtectedRoute from "../Auth/ProtectedRoute";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,18 +18,23 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* Navbar will be here */}
-      <Switch>
-        <Route path="/" exact={true}>
-          <Splash />
-        </Route>
-        <Route path="/login" exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path="/sign-up" exact={true}>
-          <SignUpForm />
-        </Route>
-      </Switch>
+      <div className="">
+        {/* Navbar will be here */}
+        <Switch>
+          <Route path="/" exact={true}>
+            <Splash />
+          </Route>
+          <Route path="/login" exact={true}>
+            <LoginForm />
+          </Route>
+          <Route path="/sign-up" exact={true}>
+            <SignUpForm />
+          </Route>
+          <ProtectedRoute path="/home" exact={true}>
+            {/* Home */}
+          </ProtectedRoute>
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }
