@@ -6,6 +6,7 @@ import reportWebVitals from "./utils/reportWebVitals";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import configureStore from "./store";
+import BoardViewContextProvider from "./context/BoardViewContext";
 
 const store = configureStore({});
 
@@ -13,7 +14,9 @@ const store = configureStore({});
 const Root = () => (
   <BrowserRouter>
     <Provider store={store}>
-      <App />
+      <BoardViewContextProvider>
+        <App />
+      </BoardViewContextProvider>
     </Provider>
   </BrowserRouter>
 );

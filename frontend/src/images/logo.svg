@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="49.288 45.131 428.741 394.893" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1, 0, 0, 1, 152.183029, 49.764477)">
+    <g id="change1_1">
+      <polygon fill="#B2FF99" points="47.1 0 17.8 252.8 272.1 282.3 301.6 27.9"/>
+    </g>
+    <g id="change2_9">
+      <rect fill="#96EF76" height="221.2" transform="matrix(.1022 -.9948 .9948 .1022 85.418 225.21)" width="2" x="166.5" y="-45.3"/>
+    </g>
+    <g id="change2_2">
+      <rect fill="#96EF76" height="221.2" transform="matrix(.1022 -.9948 .9948 .1022 61.875 241.04)" width="2" x="163.5" y="-24.4"/>
+    </g>
+    <g id="change2_3">
+      <rect fill="#96EF76" height="221.2" transform="matrix(.1022 -.9948 .9948 .1022 39.246 258.08)" width="2" x="161.6" y="-3.3"/>
+    </g>
+    <g id="change2_7">
+      <rect fill="#96EF76" height="221.2" transform="matrix(.1022 -.9948 .9948 .1022 16.617 275.12)" width="2" x="159.7" y="17.7"/>
+    </g>
+    <g id="change2_5">
+      <rect fill="#96EF76" height="221.2" transform="matrix(.1022 -.9948 .9948 .1022 -5.0977 293.38)" width="2" x="159" y="38.9"/>
+    </g>
+    <g id="change2_4">
+      <rect fill="#96EF76" height="221.2" transform="matrix(.1022 -.9948 .9948 .1022 -27.727 310.42)" width="2" x="157.1" y="60"/>
+    </g>
+    <g id="change2_6">
+      <rect fill="#96EF76" height="221.2" transform="matrix(.1022 -.9948 .9948 .1022 -51.268 326.25)" width="2" x="154.1" y="80.9"/>
+    </g>
+    <g id="change2_1">
+      <rect fill="#96EF76" height="221.2" transform="matrix(.1022 -.9948 .9948 .1022 -76.177 340.26)" width="2" x="149.4" y="101.7"/>
+    </g>
+    <g id="change2_8">
+      <rect fill="#96EF76" height="221.2" transform="matrix(.1022 -.9948 .9948 .1022 -98.803 357.3)" width="2" x="147.5" y="122.8"/>
+    </g>
+    <g id="change3_1">
+      <polygon fill="#FFD9E0" opacity=".8" points="258.6 0 234.8 24.8 301.6 76.6 323.9 54"/>
+    </g>
+    <g id="change3_2">
+      <path d="m0 218c2.3-0.8 17-16.8 20.4-17s64.9 66.1 64.9 66.1l-24.9 15.2-60.4-64.3z" fill="#FFD9E0" opacity=".8"/>
+    </g>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 52.192863, 158.371811)">
+    <g id="g-1">
+      <path d="m23.4 20.6c-5 102.8-14.6 215.9 9.3 254.7 10.2-0.6 248.9-11.6 248.9-11.6l-258.2-243.1z" fill="inherit" opacity=".1"/>
+    </g>
+    <g id="g-2">
+      <path d="m23.4 20.6s-5.3 201.6 15.1 247.6l243.1-4.5s-15.1-139.7-11.3-239.3l-246.9-3.8z" fill="#FFFF87"/>
+    </g>
+    <g id="g-3">
+      <path d="m61.9 0.2c-0.1-2.2 23.2 14.4 23.2 14.4l-68.5 55.8-16.6-21.1s62.7-37 61.9-49.1z" fill="#FFD9E0" opacity=".8"/>
+    </g>
+    <g id="change4_2">
+      <rect fill="#FFE087" height="2" transform="matrix(.9998 -.019528 .019528 .9998 -1.1037 2.9081)" width="195.6" x="50.6" y="57"/>
+    </g>
+    <g id="change4_5">
+      <rect fill="#FFE087" height="2" transform="matrix(.9997 -.023431 .023431 .9997 -1.9809 3.4998)" width="195.6" x="50.6" y="85.3"/>
+    </g>
+    <g id="change4_3">
+      <rect fill="#FFE087" height="2" transform="matrix(.9999 -.015623 .015623 .9999 -1.8371 2.3323)" width="195.6" x="50.6" y="117.7"/>
+    </g>
+    <g id="change4_6">
+      <rect fill="#FFE087" height="2" width="195.5" x="50.6" y="147.2"/>
+    </g>
+    <g id="change4_7">
+      <rect fill="#FFE087" height="2" width="200.8" x="50.6" y="175.1"/>
+    </g>
+    <g id="change4_1">
+      <rect fill="#FFE087" height="2" width="200.8" x="50.6" y="206.8"/>
+    </g>
+    <g id="change4_4">
+      <path d="m57.6 241.3l-0.6-1.9c2.3-0.8 162.3-4 194.3-4.6v2c-65.4 1.3-190.3 3.9-193.7 4.5z" fill="#FFE087"/>
+    </g>
+  </g>
+</svg>
