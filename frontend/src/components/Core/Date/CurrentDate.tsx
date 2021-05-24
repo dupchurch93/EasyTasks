@@ -6,7 +6,7 @@ const CurrentDate = () => {
     }
 
     return (
-        <div>{currentDate()}</div>
+        <div className="font-semibold text-2xl">{currentDate()}</div>
     )
 }
 
