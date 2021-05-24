@@ -1,12 +1,12 @@
 const HourlyComponent = () => {
   return (
     <div>
-      Time
+      {/* Time
       <hr />
       Time
       <hr />
       Time
-      <hr />
+      <hr /> */}
     </div>
   );
 };

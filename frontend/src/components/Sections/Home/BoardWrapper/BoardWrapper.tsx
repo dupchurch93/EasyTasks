@@ -1,9 +1,9 @@
-import { useBoardViewContext } from "../../../../context/BoardViewContext";
+import ViewButton from "../ViewButton";
 
 const BoardWrapper = () => {
   return (
     <div>
-      <button>wow</button>
+      <ViewButton></ViewButton>
     </div>
   );
 };
