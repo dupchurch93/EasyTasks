@@ -7,6 +7,7 @@ import SignUpForm from "../Auth/SignUpForm";
 import "./App.css";
 import Splash from "../Sections/Splash";
 import ProtectedRoute from "../Auth/ProtectedRoute";
+import Home from "../Sections/Home";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ function App() {
             <SignUpForm />
           </Route>
           <ProtectedRoute path="/home" exact={true}>
-            {/* Home */}
+            <Home/>
           </ProtectedRoute>
         </Switch>
       </div>

@@ -9,6 +9,7 @@ module.exports = {
       },
       gridTemplateRows: {
         splash: "100%",
+        standardLayout: "auto auto auto"
       },
       gridTemplateColumns: {
         splash: "70% auto",
