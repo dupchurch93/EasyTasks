@@ -1,9 +1,11 @@
 import ViewButton from "../ViewButton";
+import Goals from "../Goals";
 
 const BoardWrapper = () => {
   return (
-    <div>
-      <ViewButton></ViewButton>
+    <div className="flex">
+      <ViewButton />
+      <Goals />
     </div>
   );
 };
