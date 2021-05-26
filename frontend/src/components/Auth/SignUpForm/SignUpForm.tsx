@@ -62,8 +62,8 @@ const SignUpForm = () => {
   }
 
   return (
-    <div>
-      <form data-testid="login-form" onSubmit={onSignUp}>
+    <div className="mt-24">
+      <form className="" data-testid="login-form" onSubmit={onSignUp}>
         <div>
           {/* {errors.map((error) => (
           <div>{error}</div>
@@ -84,7 +84,7 @@ const SignUpForm = () => {
             </h2>
 
             <p className="text-xl text-center text-gray-600 dark:text-gray-200">
-              Welcome back!
+              Getting stuff done made easy.
             </p>
 
             <a
@@ -113,21 +113,39 @@ const SignUpForm = () => {
               </div>
 
               <span className="w-5/6 px-4 py-3 font-bold text-center">
-                Sign in with Google
+                Sign up with Google
               </span>
             </a>
 
             <div className="flex items-center justify-between mt-4">
               <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
 
-              <a
-                href="#"
+              <div
                 className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline"
               >
-                or login with email
-              </a>
+                or sign up with email
+              </div>
 
               <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
+            </div>
+
+            <div className="mt-4">
+              <label
+                className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                // for="LoggingEmailAddress"
+              >
+                Username
+              </label>
+              <input
+                id="username"
+                className="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                type="email"
+                data-testid="email-input"
+                name="username"
+                placeholder="Username"
+                value={username}
+                onChange={updateUsername}
+              />
             </div>
 
             <div className="mt-4">
@@ -154,16 +172,10 @@ const SignUpForm = () => {
                 <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
                   Password
                 </label>
-                <a
-                  href="#"
-                  className="text-xs text-gray-500 dark:text-gray-300 hover:underline"
-                >
-                  Forget Password?
-                </a>
               </div>
 
               <input
-                id="loggingPassword"
+                id="signUpPassword"
                 className="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
                 data-testid="password-input"
                 name="password"
@@ -173,6 +185,24 @@ const SignUpForm = () => {
                 onChange={updatePassword}
               />
             </div>
+            <div className="mt-4">
+              <div className="flex justify-between">
+                <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
+                  Confirm Password
+                </label>
+              </div>
+
+              <input
+                id="signUpRepeatPassword"
+                className="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                data-testid="repeat_password-input"
+                name="repeat_password"
+                type="password"
+                placeholder="Enter your password"
+                value={repeatPassword}
+                onChange={updateRepeatPassword}
+              />
+            </div>
 
             <div className="mt-8">
               <button
@@ -180,18 +210,18 @@ const SignUpForm = () => {
                 data-testid="submit-button"
                 type="submit"
               >
-                Login
+                Sign Up
               </button>
             </div>
 
             <div className="flex items-center justify-between mt-4">
               <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-
+              <div>Already have an account?</div>
               <a
                 href="#"
                 className="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
               >
-                or sign up
+                Login
               </a>
 
               <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
@@ -203,49 +233,7 @@ const SignUpForm = () => {
   );
 };
 
-// <form onSubmit={onSignUp}>
-// <div className="form_input">
-//   <input
-//     placeholder="Username"
-//     type="text"
-//     name="username"
-//     onChange={updateUsername}
-//     value={username}
-//   ></input>
-// </div>
-// <div className="form_input">
-//   <input
-//     placeholder="Email"
-//     type="text"
-//     name="email"
-//     onChange={updateEmail}
-//     value={email}
-//   ></input>
-// </div>
-// <div className="form_input">
-//   <input
-//     placeholder="Password"
-//     type="password"
-//     name="password"
-//     onChange={updatePassword}
-//     value={password}
-//   ></input>
-// </div>
-// <div className="form_input">
-//   <input
-//     placeholder="Confirm Password"
-//     type="password"
-//     name="repeat_password"
-//     onChange={updateRepeatPassword}
-//     value={repeatPassword}
-//     required={true}
-//   ></input>
-// </div>
-// <div>
-//   <button type="submit" onClick={onSignUp}>
-//     Sign Up
-//   </button>
-// </div>
+
 // <div>
 //   <button onClick={loginAsDemo}>Try as Demo User</button>
 // </div>
