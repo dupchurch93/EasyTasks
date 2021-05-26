@@ -31,7 +31,7 @@ const LoginForm = () => {
   }
 
   return (
-    <div  className="flex justify-center items-center"    style={{
+    <div  className="flex w-screen h-screen justify-center items-center"    style={{
               backgroundImage: `url(
               "https://static.vecteezy.com/system/resources/thumbnails/001/834/369/small/collection-of-different-colored-sheets-of-sticky-notes-vector.jpg"
               )`,
