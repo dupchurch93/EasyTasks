@@ -42,7 +42,7 @@ const LoginForm = () => {
           <div>{error}</div>
         ))} */}
         </div>
-        <div className="flex max-w-sm mx-auto my-24 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:min-w-4xl">
+        <div className="flex w-96 max-w-sm mx-auto my-24 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:min-w-4xl">
           {/* <div
             className="hidden bg-cover lg:block lg:w-1/2"
             style={{
