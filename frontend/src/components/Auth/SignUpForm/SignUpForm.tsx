@@ -1,6 +1,7 @@
 import { useState, MouseEvent } from "react";
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { createUser, login } from "../../../store/session";
 import { RootState } from "../../../store";
 
@@ -216,13 +217,11 @@ const SignUpForm = () => {
 
             <div className="flex items-center justify-between mt-4">
               <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-              <div>Already have an account?</div>
-              <a
-                href="#"
+              <Link to="/login"
                 className="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
               >
-                Login
-              </a>
+                Or Login
+              </Link>
 
               <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
             </div>
