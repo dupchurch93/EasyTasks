@@ -57,7 +57,7 @@ const SignUpForm = () => {
     setRepeatPassword(e.target.value);
   };
 
-  if (sessionUser) {
+  if (sessionUser.id) {
     return <Redirect to="/" />;
   }
 
