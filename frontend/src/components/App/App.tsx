@@ -19,7 +19,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="">
+      <div>
         {/* Navbar will be here */}
         <Switch>
           <Route path="/" exact={true}>
