@@ -1,7 +1,6 @@
 import { useState, MouseEvent } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect,Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { createUser, login } from "../../../store/session";
 import { RootState } from "../../../store";
 
@@ -68,8 +67,8 @@ const SignUpForm = () => {
       "https://static.vecteezy.com/system/resources/thumbnails/001/834/369/small/collection-of-different-colored-sheets-of-sticky-notes-vector.jpg"
       )`,
     }}>
-      <form className="h-full" data-testid="login-form" onSubmit={onSignUp}>
-        <div className="flex shadow-signUp w-96 max-w-sm mx-auto my-24 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:min-w-4xl">
+      <form className="" data-testid="login-form" onSubmit={onSignUp}>
+        <div className="flex shadow-signUp border border-black w-96 max-w-sm mx-auto my-24 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:min-w-4xl">
           <div className="w-full px-6 py-8 md:px-8">
             <h2 className="text-2xl font-semibold text-center text-gray-700 dark:text-white">
               EasyTask

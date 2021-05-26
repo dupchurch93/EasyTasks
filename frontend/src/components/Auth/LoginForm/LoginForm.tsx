@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { login } from "../../../store/session";
@@ -36,13 +36,13 @@ const LoginForm = () => {
               "https://static.vecteezy.com/system/resources/thumbnails/001/834/369/small/collection-of-different-colored-sheets-of-sticky-notes-vector.jpg"
               )`,
             }}>
-      <form data-testid="login-form" onSubmit={onLogin}>
+      <form className="" data-testid="login-form" onSubmit={onLogin}>
         <div>
           {/* {errors.map((error) => (
           <div>{error}</div>
         ))} */}
         </div>
-        <div className="flex w-96 max-w-sm mx-auto my-24 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:min-w-4xl">
+        <div className="flex shadow-signUp border border-black w-96 max-w-sm mx-auto my-24 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:min-w-4xl">
           {/* <div
             className="hidden bg-cover lg:block lg:w-1/2"
             style={{
@@ -154,12 +154,11 @@ const LoginForm = () => {
             <div className="flex items-center justify-between mt-4">
               <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
 
-              <a
-                href="/sign-up"
+              <Link to="/sign-up"
                 className="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
               >
-                or sign up
-              </a>
+                Or Sign Up
+              </Link>
 
               <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
             </div>
