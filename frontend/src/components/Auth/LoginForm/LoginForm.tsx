@@ -31,7 +31,7 @@ const LoginForm = () => {
   }
 
   return (
-    <div  className=""    style={{
+    <div  className="flex justify-center items-center"    style={{
               backgroundImage: `url(
               "https://static.vecteezy.com/system/resources/thumbnails/001/834/369/small/collection-of-different-colored-sheets-of-sticky-notes-vector.jpg"
               )`,
@@ -42,7 +42,7 @@ const LoginForm = () => {
           <div>{error}</div>
         ))} */}
         </div>
-        <div className="flex max-w-sm mx-auto my-24 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-xl">
+        <div className="flex max-w-sm mx-auto my-24 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:min-w-4xl">
           {/* <div
             className="hidden bg-cover lg:block lg:w-1/2"
             style={{
