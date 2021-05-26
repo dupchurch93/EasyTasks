@@ -63,10 +63,14 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className="pt-24 h-screen bg-royalBlue">
+    <div className="flex justify-center items-center" style={{
+      backgroundImage: `url(
+      "https://static.vecteezy.com/system/resources/thumbnails/001/834/369/small/collection-of-different-colored-sheets-of-sticky-notes-vector.jpg"
+      )`,
+    }}>
       <form className="h-full" data-testid="login-form" onSubmit={onSignUp}>
-        <div className="flex shadow-signUp max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
-          <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
+        <div className="flex shadow-signUp w-96 max-w-sm mx-auto my-24 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:min-w-4xl">
+          <div className="w-full px-6 py-8 md:px-8">
             <h2 className="text-2xl font-semibold text-center text-gray-700 dark:text-white">
               EasyTask
             </h2>
