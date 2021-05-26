@@ -65,3 +65,8 @@ def sign_up():
 @auth.route('/unauthorized')
 def unauthorized():
     return {'errors': ['Unauthorized']}, 401
+
+@auth.route('/logout')
+def logout():
+    logout_user()
+    return "User has been logged out!"
