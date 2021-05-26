@@ -63,7 +63,7 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className="flex justify-center items-center" style={{
+    <div className="flex justify-center w-screen h-screen items-center" style={{
       backgroundImage: `url(
       "https://static.vecteezy.com/system/resources/thumbnails/001/834/369/small/collection-of-different-colored-sheets-of-sticky-notes-vector.jpg"
       )`,
