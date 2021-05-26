@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./components/App";
-import reportWebVitals from "./utils/reportWebVitals";
-import { Provider } from "react-redux";
+import App from "../components/App";
+import reportWebVitals from "../utils/reportWebVitals";
+import { Provider, useDispatch } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import configureStore from "./store";
-import BoardViewContextProvider from "./context/BoardViewContext";
+import configureStore from ".";
+import BoardViewContextProvider from "../context/BoardViewContext";
 
 const store = configureStore({});
 
@@ -27,6 +27,11 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+
+export type AppDispatch = typeof store.dispatch
+export const useAppDispatch = () => {
+  useDispatch<AppDispatch>()
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

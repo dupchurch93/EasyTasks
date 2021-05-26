@@ -4,18 +4,23 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { login } from "../../../store/session";
 import { RootState } from "../../../store";
+import {User, Errors} from "../../../store/sessionActionTypes";
+import {useAppDispatch} from "../../../store/index";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state: RootState) => state.session.user);
 
-  // const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const onLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    dispatch(login(email, password));
+    const user: User | Errors = await dispatch(login(email, password));
+    if (user.errors) {
+      setErrors.user.errors
+    }
   };
 
   const updateEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,9 +43,9 @@ const LoginForm = () => {
             }}>
       <form className="" data-testid="login-form" onSubmit={onLogin}>
         <div>
-          {/* {errors.map((error) => (
+          {errors.map((error) => (
           <div>{error}</div>
-        ))} */}
+        ))}
         </div>
         <div className="flex shadow-signUp border border-black w-96 max-w-sm mx-auto my-24 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:min-w-4xl">
           {/* <div

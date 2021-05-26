@@ -1,3 +1,4 @@
+import { type } from "os";
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension"
 import thunk from "redux-thunk";
@@ -28,6 +29,5 @@ const configureStore = (preloadedState: BaseState) => {
 };
 
 export type RootState = ReturnType<typeof rootReducer>
-
 
 export default configureStore;

@@ -8,6 +8,10 @@ export interface User {
   password?: string;
 }
 
+export interface Errors {
+  errors: string[];
+}
+
 export interface setSession {
   type: typeof SET_SESSION;
   payload: User;
