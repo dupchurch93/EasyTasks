@@ -36,7 +36,7 @@ const LoginForm = () => {
               "https://static.vecteezy.com/system/resources/thumbnails/001/834/369/small/collection-of-different-colored-sheets-of-sticky-notes-vector.jpg"
               )`,
             }}>
-      <form data-testid="login-form" onSubmit={onLogin}>
+      <form className="" data-testid="login-form" onSubmit={onLogin}>
         <div>
           {/* {errors.map((error) => (
           <div>{error}</div>
