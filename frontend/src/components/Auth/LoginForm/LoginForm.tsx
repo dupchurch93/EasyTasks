@@ -38,7 +38,7 @@ const LoginForm = () => {
           <div>{error}</div>
         ))} */}
         </div>
-        <div className="flex max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
+        <div className="flex max-w-sm mx-auto my-24 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
           <div
             className="hidden bg-cover lg:block lg:w-1/2"
             style={{
@@ -123,12 +123,6 @@ const LoginForm = () => {
                 <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
                   Password
                 </label>
-                <a
-                  href="#"
-                  className="text-xs text-gray-500 dark:text-gray-300 hover:underline"
-                >
-                  Forget Password?
-                </a>
               </div>
 
               <input
@@ -157,7 +151,7 @@ const LoginForm = () => {
               <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
 
               <a
-                href="#"
+                href="/sign-up"
                 className="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
               >
                 or sign up
