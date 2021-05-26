@@ -17,6 +17,9 @@ module.exports = {
       margin: {
         twenty: "15%",
       },
+      boxShadow: {
+        signUp: "3px 3px 2px 1px grey"
+      }
     },
   },
   variants: {
