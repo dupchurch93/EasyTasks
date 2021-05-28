@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "../components/App";
-import reportWebVitals from "../utils/reportWebVitals";
+import App from "./components/App";
+import reportWebVitals from "./utils/reportWebVitals";
 import { Provider, useDispatch } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import configureStore from ".";
-import BoardViewContextProvider from "../context/BoardViewContext";
+import configureStore from "./store";
+import BoardViewContextProvider from "./context/BoardViewContext";
 
 const store = configureStore({});
 
@@ -29,7 +29,7 @@ ReactDOM.render(
 );
 
 export type AppDispatch = typeof store.dispatch
-export const useAppDispatch = () => {
+export const UseAppDispatch: any = () => {
   useDispatch<AppDispatch>()
 }
 

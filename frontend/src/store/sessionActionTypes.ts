@@ -4,17 +4,22 @@ export const REMOVE_SESSION = "session/REMOVE_SESSION";
 export interface User {
   username: string;
   email: string;
+  errors?: string[];
   id?: number;
   password?: string;
 }
 
-export interface Errors {
-  errors: string[];
+export interface loginUser {
+  username?: string;
+  email?: string;
+  errors?: string[];
+  id?: number;
+  password?: string;
 }
 
 export interface setSession {
   type: typeof SET_SESSION;
-  payload: User;
+  payload: User | loginUser;
 }
 
 export interface removeSession {
