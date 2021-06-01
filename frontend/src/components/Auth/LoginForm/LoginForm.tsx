@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { login } from "../../../store/session";
 import { RootState } from "../../../store";
-import {loginUser, User} from "../../../store/sessionActionTypes";
+import { User } from "../../../store/sessionActionTypes";
 import {UseAppDispatch} from "../../../index";
+import {useSessionContext} from "../../../context/SessionContext";
 
 const LoginForm = () => {
   const dispatch = UseAppDispatch();
@@ -14,12 +15,13 @@ const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const {sessionErrors, setSessionErrors} = useSessionContext();
 
   const onLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    const user: User = await dispatch(login(email, password));
-    if (user.errors) {
-      setErrors(user.errors)
+    const user = await dispatch(login(email, password));
+    if (sessionErrors){
+      console.log("hi")
     }
   };
 

@@ -5,6 +5,12 @@ import {
   REMOVE_SESSION,
   SessionDispatchTypes,
 } from "./sessionActionTypes";
+import {useSessionContext} from "../../src/context/SessionContext";
+
+type SessionContextType = {
+  hasErrors: string[];
+  setSessionErrors: (state: string[]) => void;
+}
 
 export const authenticate =
   () => async (dispatch: Dispatch<SessionDispatchTypes>) => {
@@ -26,6 +32,8 @@ export const authenticate =
 export const login =
   (email: string, password: string) =>
   async (dispatch: Dispatch<SessionDispatchTypes>) => {
+    const { setSessionErrors} = useSessionContext() as SessionContextType;
+
     const response = await fetch("/api/auth/login", {
       method: "POST",
       headers: {
@@ -35,7 +43,7 @@ export const login =
         email,
         password,
       }),
-    });
+    })
     const user = await response.json();
     if (!user.errors) {
       dispatch({
@@ -43,7 +51,7 @@ export const login =
         payload: user,
       });
     }
-    return user;
+    setSessionErrors(user.errors)
   };
 
 export const logout =

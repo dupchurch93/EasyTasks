@@ -9,17 +9,9 @@ export interface User {
   password?: string;
 }
 
-export interface loginUser {
-  username?: string;
-  email?: string;
-  errors?: string[];
-  id?: number;
-  password?: string;
-}
-
 export interface setSession {
   type: typeof SET_SESSION;
-  payload: User | loginUser;
+  payload: User;
 }
 
 export interface removeSession {
