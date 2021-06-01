@@ -4,9 +4,12 @@ import "./index.css";
 import App from "./components/App";
 import reportWebVitals from "./utils/reportWebVitals";
 import { Provider } from "react-redux";
+
 import { BrowserRouter } from "react-router-dom";
+
 import configureStore from "./store";
 import BoardViewContextProvider from "./context/BoardViewContext";
+import SessionContextProvider from "./context/SessionContext";
 
 const store = configureStore({});
 
@@ -14,9 +17,11 @@ const store = configureStore({});
 const Root = () => (
   <BrowserRouter>
     <Provider store={store}>
-      <BoardViewContextProvider>
-        <App />
-      </BoardViewContextProvider>
+      <SessionContextProvider>
+        <BoardViewContextProvider>
+          <App />
+        </BoardViewContextProvider>
+      </SessionContextProvider>
     </Provider>
   </BrowserRouter>
 );

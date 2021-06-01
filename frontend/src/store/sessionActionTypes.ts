@@ -4,6 +4,7 @@ export const REMOVE_SESSION = "session/REMOVE_SESSION";
 export interface User {
   username: string;
   email: string;
+  errors?: string[];
   id?: number;
   password?: string;
 }
