@@ -8,14 +8,19 @@ import { User } from "../../../store/sessionActionTypes";
 import {UseAppDispatch} from "../../../index";
 import {useSessionContext} from "../../../context/SessionContext";
 
+type UseSessionType = {
+  sessionErrors: string[];
+  setSessionErrors: (errors: string[]) => void;
+}
+
 const LoginForm = () => {
-  const dispatch = UseAppDispatch();
+  const dispatch = useDispatch();
   const sessionUser = useSelector((state: RootState) => state.session.user);
 
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {sessionErrors, setSessionErrors} = useSessionContext();
+  const {sessionErrors, setSessionErrors} = useSessionContext() as UseSessionType;
 
   const onLogin = async (e: React.FormEvent) => {
     e.preventDefault();
