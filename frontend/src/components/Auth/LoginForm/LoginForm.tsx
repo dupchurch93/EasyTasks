@@ -1,32 +1,24 @@
 import React, { useState } from "react";
 import { Redirect, Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-
-import { login } from "../../../store/session";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../store";
-import { User } from "../../../store/sessionActionTypes";
-import {UseAppDispatch} from "../../../index";
-import {useSessionContext} from "../../../context/SessionContext";
-
-type UseSessionType = {
-  sessionErrors: string[];
-  setSessionErrors: (errors: string[]) => void;
-}
+import { login } from "../../../store/session";
+// import { User } from "../../../store/sessionActionTypes";
 
 const LoginForm = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
   const sessionUser = useSelector((state: RootState) => state.session.user);
 
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {sessionErrors, setSessionErrors} = useSessionContext() as UseSessionType;
 
   const onLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     const user = await dispatch(login(email, password));
-    if (sessionErrors){
-      console.log("hi")
+    console.log(user);
+    if (user.errors) {
+      setErrors(user.errors);
     }
   };
 
@@ -43,16 +35,19 @@ const LoginForm = () => {
   }
 
   return (
-    <div  className="flex w-screen h-screen justify-center items-center"    style={{
-              backgroundImage: `url(
+    <div
+      className="flex w-screen h-screen justify-center items-center"
+      style={{
+        backgroundImage: `url(
               "https://static.vecteezy.com/system/resources/thumbnails/001/834/369/small/collection-of-different-colored-sheets-of-sticky-notes-vector.jpg"
               )`,
-            }}>
+      }}
+    >
       <form className="" data-testid="login-form" onSubmit={onLogin}>
         <div>
           {errors.map((error) => (
-          <div>{error}</div>
-        ))}
+            <div>{error}</div>
+          ))}
         </div>
         <div className="flex shadow-signUp border border-black w-96 max-w-sm mx-auto my-24 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:min-w-4xl">
           {/* <div
@@ -166,7 +161,8 @@ const LoginForm = () => {
             <div className="flex items-center justify-between mt-4">
               <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
 
-              <Link to="/sign-up"
+              <Link
+                to="/sign-up"
                 className="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
               >
                 Or Sign Up
