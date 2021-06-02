@@ -59,6 +59,9 @@ const LoginForm = () => {
             }}
           ></div> */}
           <div className="w-full px-6 py-8 md:px-8 ">
+            {errors.map((error) => (
+              <div>{error}</div>
+            ))}
             <h2 className="text-2xl font-semibold text-center text-gray-700 dark:text-white">
               EasyTask
             </h2>
