@@ -12,13 +12,21 @@ const SignUpForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
+  const [errors, setErrors] = useState([])
 
   // Grab the user from the redux store
   const sessionUser = useSelector((state: RootState) => state.session.user);
 
   const onSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
-    // let newErrors = [];
+    let newErrors = [];
+    let emailPattern = "\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b"
+    let ePat = re.compile(emailPattern)
+    let emailmatch = re.search(ePat, email)
+    if (!emailmatch) {
+      newErrors.push("Not a valid email, please try again")
+    }
+    
     if (password === repeatPassword) {
       await dispatch(createUser({ username, email, password }));
       await setUsername("");
