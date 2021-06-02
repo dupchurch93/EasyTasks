@@ -22,7 +22,7 @@ const SignUpForm = () => {
     let newErrors: any = []
 
     let emailPattern = new RegExp("\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b")
- 
+
     if (!emailPattern.test(email)) {
       newErrors.push("Not a valid email, please try again")
     }
@@ -32,10 +32,10 @@ const SignUpForm = () => {
     if (!passwordPattern.test(password)) {
       newErrors.push("Not a valid password, please try again")
     }
-  
+
     if (password !== repeatPassword) {
       newErrors.push("Passwords do not match")
-      
+
       // .catch(async (res) => {
         //   const data = await res.json();
       //   if (data && data.errors) {
@@ -46,14 +46,14 @@ const SignUpForm = () => {
     if (newErrors.length) {
       setErrors(newErrors)
     }
-  }, [errors])
+  }, [email, password, repeatPassword])
 
   const onSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     // let newErrors: any = []
 
     // let emailPattern = new RegExp("\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b")
- 
+
     // if (!emailPattern.test(email)) {
     //   newErrors.push("Not a valid email, please try again")
     // }
@@ -63,10 +63,10 @@ const SignUpForm = () => {
     // if (!passwordPattern.test(password)) {
     //   newErrors.push("Not a valid password, please try again")
     // }
-  
+
     // if (password !== repeatPassword) {
     //   newErrors.push("Passwords do not match")
-      
+
     //   // .catch(async (res) => {
     //     //   const data = await res.json();
     //   //   if (data && data.errors) {
@@ -121,10 +121,13 @@ const SignUpForm = () => {
     }}>
       <form className="" data-testid="login-form" onSubmit={onSignUp}>
         <div className="flex shadow-signUp border border-black w-96 max-w-sm mx-auto my-24 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:min-w-4xl">
-          {errors.map((error) => {
-            <div>{error}</div>
-          })}
           <div className="w-full px-6 py-8 md:px-8">
+            <ul>
+            {errors.map((error) => {
+            return(
+              <li>{error}</li>
+            )})}
+            </ul>
             <h2 className="text-2xl font-semibold text-center text-gray-700 dark:text-white">
               EasyTask
             </h2>
