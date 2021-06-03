@@ -8,7 +8,7 @@ import "./App.css";
 import Splash from "../Sections/Splash";
 import ProtectedRoute from "../Auth/ProtectedRoute";
 import Home from "../Sections/Home";
-import Navbar from "../Navigation/Navbar"
+import Navbar from "../Navigation/Navbar/Navbar"
 
 function App() {
   const dispatch = useDispatch();
