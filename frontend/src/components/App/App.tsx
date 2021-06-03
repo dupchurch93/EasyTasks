@@ -8,6 +8,7 @@ import "./App.css";
 import Splash from "../Sections/Splash";
 import ProtectedRoute from "../Auth/ProtectedRoute";
 import Home from "../Sections/Home";
+import Navbar from "../Navigation/Navbar"
 
 function App() {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        {/* Navbar will be here */}
+        <Navbar />
         <Switch>
           <Route path="/" exact={true}>
             <Splash />

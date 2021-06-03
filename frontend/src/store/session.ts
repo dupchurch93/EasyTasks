@@ -63,6 +63,7 @@ export const logout =
         "Content-Type": "application/json",
       },
     });
+    console.log("OUR RESPONSE", response)
     if (response.ok) {
       dispatch({
         type: REMOVE_SESSION,
