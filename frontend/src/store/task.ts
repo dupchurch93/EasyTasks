@@ -7,7 +7,7 @@ import {
   } from "./taskActionTypes";
 
 export const createTask = () => async (dispatch: Dispatch<TaskDispatchTypes>) => {
-    const res = await fetch("/api/task/", {
+    const res = await fetch("/api/task/add", {
         headers: {
             "Content-Type": "application/json",
         },
